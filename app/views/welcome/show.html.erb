@@ -70,8 +70,8 @@
           <h2 class="section-heading">Discover what all the buzz is about!</h2>
           <p>Our app is available on any mobile device! Download now to get started!</p>
           <div class="badges">
-            <a class="badge-link" href="#"><img src="img/google-play-badge.svg" alt=""></a>
-            <a class="badge-link" href="#"><img src="img/app-store-badge.svg" alt=""></a>
+            <a class="badge-link" href="#"><%= image_tag asset_path('google-play-badge') %></a>
+            <a class="badge-link" href="#"><%= image_tag asset_path('app-store-badge') %></a>
           </div>
         </div>
       </div>
@@ -91,11 +91,9 @@
             <div class="device-mockup iphone5">
               <div class="device">
                 <div class="screen">
-                  <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
-                  <img src="img/person_facial_recognition.jpg" class="img-fluid" alt="">
+                  <%= image_tag asset_path('person_facial_recognition'), class: "img-fluid" %>
                 </div>
                 <div class="button">
-                  <!-- You can hook the "home button" to some JavaScript events or just remove it -->
                 </div>
               </div>
             </div>
@@ -192,16 +190,6 @@
       </ul>
     </div>
   </footer>
-
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Plugin JavaScript -->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-  <!-- Custom scripts for this template -->
-  <script src="js/new-age.min.js"></script>
 
 </body>
 
