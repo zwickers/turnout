@@ -15,3 +15,4 @@ Rails.application.config.assets.precompile += %w( simple-line-icons/css/simple-l
 Rails.application.config.assets.precompile += %w( jquery/jquery.min.js )
 Rails.application.config.assets.precompile += %w( bootstrap/js/bootstrap.bundle.min.js )
 Rails.application.config.assets.precompile += %w( jquery-easing/jquery.easing.min.js )
+Rails.application.config.assets.precompile += %w( device-mockups/device-mockups.min.css )
