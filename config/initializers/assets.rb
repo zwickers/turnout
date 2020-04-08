@@ -12,3 +12,6 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( bootstrap/css/bootstrap.css )
 Rails.application.config.assets.precompile += %w( fontawesome-free/css/all.min.css )
 Rails.application.config.assets.precompile += %w( simple-line-icons/css/simple-line-icons.css )
+Rails.application.config.assets.precompile += %w( jquery/jquery.min.js )
+Rails.application.config.assets.precompile += %w( bootstrap/js/bootstrap.bundle.min.js )
+Rails.application.config.assets.precompile += %w( jquery-easing/jquery.easing.min.js )

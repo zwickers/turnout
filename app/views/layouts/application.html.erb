@@ -19,8 +19,14 @@
   <!-- Plugin CSS -->
   <link rel="stylesheet" href="device-mockups/device-mockups.min.css">
 	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-	<%= csrf_meta_tags %>
+  <!-- Bootstrap core JavaScript -->
+  <%= javascript_include_tag 'jquery/jquery.min' %>
+  <%= javascript_include_tag 'bootstrap/js/bootstrap.bundle.min' %>
+
+  <!-- Plugin JavaScript -->
+  <%= javascript_include_tag 'jquery-easing/jquery.easing.min' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
 </head>
 <body>
 
