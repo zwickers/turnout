@@ -10,10 +10,9 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require jquery_ujs
+
 //= require turbolinks
-//= require_tree .
+
 
 (function($) {
   "use strict"; // Start of use strict
@@ -45,11 +44,14 @@
 
   // Collapse Navbar
   var navbarCollapse = function() {
-    if ($("#mainNav").offset().top > 100) {
-      $("#mainNav").addClass("navbar-shrink");
-    } else {
-      $("#mainNav").removeClass("navbar-shrink");
-    }
+  	console.log($("#mainNav").offset());
+  	if ($("#mainNav").offset() != undefined) {
+  		if ($("#mainNav").offset().top > 100) {
+      		$("#mainNav").addClass("navbar-shrink");
+    	} else {
+     		$("#mainNav").removeClass("navbar-shrink");
+    	}
+  	}
   };
   // Collapse now if page is not at top
   navbarCollapse();
