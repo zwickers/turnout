@@ -26,7 +26,7 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#download">Sign up</a>
+            <a class="nav-link js-scroll-trigger" href="#download" data-toggle="modal" data-target="#modalCenter">Sign up</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#features">Features</a>
@@ -45,7 +45,7 @@
         <div class="col-lg-7 my-auto">
           <div class="header-content mx-auto">
             <h3 class="mb-5">Turnout is a webapp that automatically takes class attendance using the latest facial recognition technology. <br><br>With seamless integration into Excel, Google Sheets, and Canvas, never waste another hour entering hundreds of student's attendance grades ever again.</h1>
-            <a href="#download" class="btn btn-outline btn-xl js-scroll-trigger">Start Now for Free!</a>
+            <a href="#download" class="btn btn-outline btn-xl js-scroll-trigger" data-toggle="modal" data-target="#modalCenter">Start Now for Free!</a>
           </div>
         </div>
         <div class="col-lg-5 my-auto">
@@ -143,7 +143,7 @@
     <div class="cta-content">
       <div class="container">
         <h2>Stop grading,<br>start teaching.</h2>
-        <a href="#contact" class="btn btn-outline btn-xl js-scroll-trigger">Let's Get Started!</a>
+        <a href="#contact" class="btn btn-outline btn-xl js-scroll-trigger" data-toggle="modal" data-target="#modalCenter">Let's Get Started!</a>
       </div>
     </div>
     <div class="overlay"></div>
@@ -190,6 +190,35 @@
       </ul>
     </div>
   </footer>
+
+<!-- Modal -->
+<div class="modal fade" id="modalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <strong><h5 class="modal-title">Sign up for an account...</h5></strong>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= form_tag do  %>
+        <%= label_tag 'Name'  %><br>
+        <%= text_field_tag :name %><br>
+        <%= label_tag 'Email'  %><br>
+        <%= text_field_tag :email %><br>
+        <%= label_tag 'Password'  %><br>
+        <%= password_field_tag :password %><br>
+        <br>
+        Already have an account? <a id="login_link" href="#">Log in here</a>
+      </div>
+      <div class="modal-footer">
+        <%= submit_tag 'Submit', class: "btn btn-secondary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
 </body>
 
