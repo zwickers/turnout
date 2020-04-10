@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>Turnout</title>
+	  <!-- Bootstrap core CSS -->
+  <%= stylesheet_link_tag 'bootstrap/css/bootstrap' %>
+
+  <!-- Custom fonts for this template -->
+  <%= stylesheet_link_tag 'fontawesome-free/css/all.min' %>
+  <%= stylesheet_link_tag 'simple-line-icons/css/simple-line-icons' %>
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+
+  <!-- Plugin CSS -->
+  <%= stylesheet_link_tag 'device-mockups/device-mockups.min' %>
+
+	<%= stylesheet_link_tag  'homepage', media: 'all', 'data-turbolinks-track' => true %>
+
+  <!-- Bootstrap core JavaScript -->
+  <%= javascript_include_tag 'jquery/jquery.min' %>
+  <%= javascript_include_tag 'bootstrap/js/bootstrap.bundle.min' %>
+
+  <!-- Plugin JavaScript -->
+  <%= javascript_include_tag 'jquery-easing/jquery.easing.min' %>
+
+  <%= javascript_include_tag 'homepage', 'data-turbolinks-track' => true %>
+
+</head>
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">Turnout</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#download" data-toggle="modal" data-target="#modalCenter">Sign up</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#features">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="masthead">
+    <div class="container h-100">
+      <div class="row h-100">
+        <div class="col-lg-7 my-auto">
+          <div class="header-content mx-auto">
+            <h3 class="mb-5">Turnout is a webapp that automatically takes class attendance using the latest facial recognition technology. <br><br>With seamless integration into Excel, Google Sheets, and Canvas, never waste another hour entering hundreds of student's attendance grades ever again.</h1>
+            <a href="#download" class="btn btn-outline btn-xl js-scroll-trigger" data-toggle="modal" data-target="#modalCenter">Start Now for Free!</a>
+          </div>
+        </div>
+        <div class="col-lg-5 my-auto">
+          <div class="device-container">
+            <div class="device-mockup macbook_2015">
+              <div class="device">
+                <div class="screen">
+                  <%= image_tag asset_path('lecture'), class: "img-fluid" %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="download bg-primary text-center" id="download">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 mx-auto">
+          <h2 class="section-heading">Discover what all the buzz is about!</h2>
+          <p>Our app is available on any mobile device! Download now to get started!</p>
+          <div class="badges">
+            <a class="badge-link" href="#"><%= image_tag asset_path('google-play-badge') %></a>
+            <a class="badge-link" href="#"><%= image_tag asset_path('app-store-badge') %></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-heading text-center">
+        <h2>Countless Features, Limitless Possibilites</h2>
+        <p class="text-muted">See how Turnout can improve your classroom's workflow.</p>
+        <hr>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 my-auto">
+          <div class="device-container">
+            <div class="device-mockup iphone5">
+              <div class="device">
+                <div class="screen">
+                  <%= image_tag asset_path('person_facial_recognition'), class: "img-fluid" %>
+                </div>
+                <div class="button">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8 my-auto">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="feature-item">
+                  <i class="icon-screen-smartphone text-primary"></i>
+                  <h3>Always connected</h3>
+                  <p class="text-muted">Automatically updates any linked Google Sheets spreadsheets, Excel spreadsheets, and can even update student's respective grades on canvas.</p>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="feature-item">
+                  <i class="icon-camera text-primary"></i>
+                  <h3>Flexible Use</h3>
+                  <p class="text-muted">Upload either an image or a panorama video.</p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="feature-item">
+                  <i class="icon-present text-primary"></i>
+                  <h3>Free to Use</h3>
+                  <p class="text-muted">Use free for 30 days before subscribing for a low monthly fee of $5.99</p>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="feature-item">
+                  <i class="icon-lock-open text-primary"></i>
+                  <h3>Transparent</h3>
+                  <p class="text-muted">Students may look at any past attendance photos/videos to dispute alleged mistakes, which can be automatically updated.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="cta-content">
+      <div class="container">
+        <h2>Stop grading,<br>start teaching.</h2>
+        <a href="#contact" class="btn btn-outline btn-xl js-scroll-trigger" data-toggle="modal" data-target="#modalCenter">Let's Get Started!</a>
+      </div>
+    </div>
+    <div class="overlay"></div>
+  </section>
+
+  <section class="contact bg-primary" id="contact">
+    <div class="container">
+      <h2>We
+        <i class="fas fa-heart"></i>
+        new friends!</h2>
+      <ul class="list-inline list-social">
+        <li class="list-inline-item social-twitter">
+          <a href="#">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </li>
+        <li class="list-inline-item social-facebook">
+          <a href="#">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+        </li>
+        <li class="list-inline-item social-google-plus">
+          <a href="#">
+            <i class="fab fa-google-plus-g"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; Turnout 2020. All Rights Reserved.</p>
+      <ul class="list-inline">
+        <li class="list-inline-item">
+          <a href="#">Privacy</a>
+        </li>
+        <li class="list-inline-item">
+          <a href="#">Terms</a>
+        </li>
+        <li class="list-inline-item">
+          <a href="#">FAQ</a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+
+<!-- Modal -->
+<div class="modal fade" id="modalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <strong><h5 class="modal-title">Sign up for an account...</h5></strong>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+ 
+
+  <%= form_tag("/signup", :method => "post") do %>
+   <%= label_tag(:email, "Email:") %>
+   <%= text_field_tag(:email) %>
+   <br>
+   <%= label_tag(:password, "Password:") %>
+   <%= text_field_tag(:password) %>
+   <br>
+   <%= label_tag(:password_confirmation, "Password confirmation:") %>
+   <%= text_field_tag(:password_confirmation) %>
+   
+
+
+        <br>
+        Already have an account? <a id="login_link" href="/login">Log in here.</a>
+      </div>
+      <div class="modal-footer">
+        <%= submit_tag 'Submit', class: "btn btn-secondary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+
+</html>
