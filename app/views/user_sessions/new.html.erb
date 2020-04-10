@@ -1,0 +1,22 @@
+# app/views/user_sessions/new.html.erb
+<h1>Login</h1>
+
+
+<% if flash[:alert] %>
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <strong>Holy guacamole!</strong> You should double check some of those fields below. It looks
+  like you entered an incorrect email or password.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<% end %>
+
+<%= form_tag("/login", :method => "post") do %>
+   <%= label_tag(:email, "Email:") %>
+   <%= text_field_tag(:email) %>
+   <%= label_tag(:password, "Password:") %>
+   <%= text_field_tag(:password) %>
+   <%= submit_tag("Login") %>
+<% end %>
+
