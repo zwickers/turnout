@@ -1,12 +1,31 @@
+<div class="container">
+<br>
 <h3> <%= @classroom.name%> </h3>
+<br>
 
-<h5> Students: </h5>
-<% @students.each do |student| %>
-Name: <%= student.name %> <br>
-ID: <%= student.university_id %> <br>
-Uploaded photo? <strong><%= student.did_upload_photo %></strong>
-<br><br><br>
-<% end %>
-
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">University ID</th>
+      <th scope="col">Uploaded photo?</th>
+    </tr>
+  </thead>
+  <tbody>
+  	<% counter = 1 %>
+  	<% @students.each do |student| %>
+    <tr>
+      <th scope="row"><%= counter %></th>
+      <td><%= student.name %></td>
+      <td><%= student.university_id %></td>
+      <td><%= student.did_upload_photo %></td>
+    </tr>
+    <% counter += 1 %>
+    <% end %>
+  </tbody>
+</table>
 
 <%= link_to "Add student", "/students/new" %>
+
+</div>
