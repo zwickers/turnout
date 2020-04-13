@@ -14,4 +14,9 @@ class StudentsController < ApplicationController
 		redirect_to "/classrooms/#{classroom_id}"
 	end
 
+	def destroy
+		Student.destroy(params[:id])
+		redirect_to "/classrooms/#{flash[:classroom_id]}"
+	end
+
 end

@@ -10,6 +10,8 @@
       <th scope="col">Name</th>
       <th scope="col">University ID</th>
       <th scope="col">Uploaded photo?</th>
+      <th scope="col">Edit student</th>
+      <th scope="col">Remove student</th>
     </tr>
   </thead>
   <tbody>
@@ -17,15 +19,19 @@
   	<% @students.each do |student| %>
     <tr>
       <th scope="row"><%= counter %></th>
-      <td><%= student.name %></td>
+      <td><%= student.name.upcase %></td>
       <td><%= student.university_id %></td>
       <td><%= student.did_upload_photo %></td>
+      <td><%= link_to "Edit" %></td>
+      <td><%= link_to "Delete", "/students/#{student.id}", method: "delete" %></td>
     </tr>
     <% counter += 1 %>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to "Add student", "/students/new" %>
+<%= button_to "Add student", "/students/new", method: "get" %>
+<br>
+<%= button_to "Back to classrooms", "/classrooms", method: "get" %>
 
 </div>
