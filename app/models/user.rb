@@ -7,5 +7,5 @@ class User < ActiveRecord::Base
 
   validates :email, uniqueness: true
 
-  has_many :classes, :class_name => "Class", :foreign_key => "prof_id"
+  has_many :classrooms, :class_name => "Classroom", :foreign_key => "prof_id"
 end

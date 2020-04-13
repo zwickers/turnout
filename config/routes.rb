@@ -7,11 +7,13 @@ Rails.application.routes.draw do
   root 'welcome#show'
   resources :users
   resources :classrooms
+  resources :students
 
   get 'login' => 'user_sessions#new', :as => :login
   post 'login' => 'user_sessions#create'
   get 'logout' => 'user_sessions#destroy', :as => :logout
   post 'signup' => 'users#create'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

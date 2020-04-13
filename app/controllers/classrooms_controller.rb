@@ -21,5 +21,7 @@ class ClassroomsController < ApplicationController
 	# GET /classroom/id
 	def show
 		@classroom = Classroom.find(params[:id])
+		flash[:classroom_id] = @classroom.id
+		@students = Student.where(classroom_id: @classroom.id)
 	end
 end

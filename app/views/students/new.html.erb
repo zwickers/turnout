@@ -1,0 +1,8 @@
+<%= form_tag("/students", :method => "post") do %>
+   <%= label_tag(:student_name, "Student name:") %> <br>
+   <%= text_field_tag(:student_name) %> <br>
+   <%= label_tag(:university_id, "Student's university ID:") %> <br>
+   <%= text_field_tag(:university_id) %> <br>
+   <%= hidden_field_tag "classroom_id", flash[:classroom_id] %>
+   <%= submit_tag("Add student") %>
+<% end %>

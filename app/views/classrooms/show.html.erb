@@ -1,3 +1,12 @@
 <h3> <%= @classroom.name%> </h3>
 
 <h5> Students: </h5>
+<% @students.each do |student| %>
+Name: <%= student.name %> <br>
+ID: <%= student.university_id %> <br>
+Uploaded photo? <strong><%= student.did_upload_photo %></strong>
+<br><br><br>
+<% end %>
+
+
+<%= link_to "Add student", "/students/new" %>
