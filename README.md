@@ -14,3 +14,9 @@ Use facial recognition to automatically keep track of class attendance. Seamless
 3. Start the server
 
 `rails server`
+
+3. Start the server
+
+`rails server`
+
+4. The app is now running on `localhost:3000`, go there in your web browser to to test it out.
