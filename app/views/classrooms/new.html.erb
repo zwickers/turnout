@@ -1,0 +1,5 @@
+<%= form_tag("/classrooms", :method => "post") do %>
+   <%= label_tag(:class_name, "Class name:") %> <br>
+   <%= text_field_tag(:class_name) %> <br>
+   <%= submit_tag("Create class") %>
+<% end %>

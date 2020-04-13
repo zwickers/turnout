@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#show'
   resources :users
-  resources :classes
+  resources :classrooms
 
   get 'login' => 'user_sessions#new', :as => :login
   post 'login' => 'user_sessions#create'

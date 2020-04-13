@@ -3,7 +3,7 @@ class UserSessionsController < ApplicationController
   def create
     @user = login(params[:email], params[:password])
     if @user
-      redirect_to "/classes"
+      redirect_to "/classrooms"
     else
       flash[:alert] = 'Login failed'
       redirect_to "/login"

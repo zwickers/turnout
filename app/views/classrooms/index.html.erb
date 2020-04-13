@@ -14,5 +14,8 @@
   </div>
   <br>
 
-
-You logged in. Nice!
+<%= link_to "Create new class", "/classrooms/new" %>
+<br>
+<% @classrooms.each do |classroom| %>
+<%= link_to classroom.name, "classrooms/#{classroom.id}" %> <br>
+<% end %>
