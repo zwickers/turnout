@@ -4,10 +4,13 @@ Use facial recognition to automatically keep track of class attendance. Seamless
 ### Installation and Setup
 
 1. First, install ruby
+
 `brew install ruby`
 
 2. After cloning the repository, go into it's directory and install the necessary ruby gems.
+
 `bundle install`
 
 3. Start the server
+
 `rails server`
