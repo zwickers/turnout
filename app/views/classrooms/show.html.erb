@@ -21,7 +21,7 @@
       <th scope="row"><%= counter %></th>
       <td><%= student.name.upcase %></td>
       <td><%= student.university_id %></td>
-      <td><%= student.did_upload_photo %></td>
+      <td><strong><%= student.did_upload_photo %>:</strong> <%= link_to "Upload photo" %></td>
       <td><%= link_to "Edit" %></td>
       <td><%= link_to "Delete", "/students/#{student.id}", method: "delete" %></td>
     </tr>
