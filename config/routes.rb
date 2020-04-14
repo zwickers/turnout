@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'uploads/new'
+
+  get 'uploads/create'
+
+  get 'uploads/index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -8,6 +14,9 @@ Rails.application.routes.draw do
   resources :users
   resources :classrooms
   resources :students
+
+  get "uploads/new/:student_id" => "uploads#new"
+  resources :uploads
 
   get 'login' => 'user_sessions#new', :as => :login
   post 'login' => 'user_sessions#create'

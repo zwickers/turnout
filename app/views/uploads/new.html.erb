@@ -1,0 +1,7 @@
+<h1>Upload a file</h1>
+
+<%= form_tag uploads_path, enctype: 'multipart/form-data' do %>
+	<%= file_field_tag :file  %>
+	<%= hidden_field_tag :uni_id, Student.find(flash[:student_id]).university_id %>
+	<%= submit_tag 'Upload file' %>
+<% end %>
