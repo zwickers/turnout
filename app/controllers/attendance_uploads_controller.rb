@@ -18,7 +18,7 @@ class AttendanceUploadsController < ApplicationController
       flash[:attendance_image_success] = "Image uploaded successfully! You'll recieve an email once the attendance grades have been entered on your Google Sheet"
       redirect_to "/classrooms/#{params[:classroom_id]}"
     else
-      flash.now[:attendance_image_error] = 'There was an error uploading the image. Please try again later.'
+      flash[:attendance_image_error] = 'There was an error uploading the image. Please try again later.'
       redirect_to "/classrooms/#{params[:classroom_id]}"
     end
   end

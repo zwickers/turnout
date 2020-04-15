@@ -36,15 +36,27 @@
 
 <% if flash[:attendance_image_success] %>
 
-<div class="alert alert-success" role="alert">
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-  <h4 class="alert-heading">Well done!</h4>
-  <p>Aww yeah, you successfully uploaded your lecture snapshot. Expect to receive an email in the next 24 hours, indicating that attendance grades have been entered into the Google Spreadsheet associated with this classroom.</p>
-  <hr>
-  <p class="mb-0">Reminder: If there is an attendance dispute, you can go back and inspect the image you uploaded and manually check if the student was in lecture.</p>
-</div>
+  <div class="alert alert-success" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <h4 class="alert-heading">Well done!</h4>
+    <p>Aww yeah, you successfully uploaded your lecture snapshot. Expect to receive an email in the next 24 hours, indicating that attendance grades have been entered into the Google Spreadsheet associated with this classroom.</p>
+    <hr>
+    <p class="mb-0">Reminder: If there is an attendance dispute, you can go back and inspect the image you uploaded and manually check if the student was in lecture.</p>
+  </div>
+
+<% end %>
+
+<% if flash[:attendance_image_error] %>
+
+  <div class="alert alert-danger" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <h4 class="alert-heading">Oops!</h4>
+    <p>Well, this sure is embarrassing... It looks like there was an error uploading your lecture snapshot. Please come back and try again later. Thank you.</p>
+  </div>
 
 <% end %>
 
