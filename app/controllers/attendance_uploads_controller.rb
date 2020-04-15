@@ -14,6 +14,11 @@ class AttendanceUploadsController < ApplicationController
 
     # Check if it was successfully uploaded to S3
     if obj.public_url
+
+      # create a database record for this attendance upload so we can display
+      # to the users all their previous uploads
+      AttendanceUpload.create(classroom_id: params[:classroom_id], date_of_picture: params[:date], prof_email: current_user.email, prof_id: current_user.id)
+
       # TODO: add a record in db for this so we can display all the attendance pictures that have been uploaded
       flash[:attendance_image_success] = "Image uploaded successfully! You'll recieve an email once the attendance grades have been entered on your Google Sheet"
       redirect_to "/classrooms/#{params[:classroom_id]}"

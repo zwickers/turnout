@@ -62,19 +62,29 @@
 
 <% end %>
 
-<div class="card" style="width: 40rem;">
+<div class="card">
   <div class="card-body">
     <h5 class="card-title">Attendance</h5>
     <h6 class="card-subtitle mb-2 text-muted">Simply upload a photo of your lecture's audience, and let us do the grading.
     </h6>
 
 
-    content content <br>
-     content content <br>
-      content content <br>
-       content content <br><br>
+    <% @attendance_uploads.each do |upload| %>
+      
+      <div class="card" style="width: 18rem;">
+        <!-- TODO: make the S3 bucket configurable via an environment variable --> 
+        <% url = "https://attendance-turnout-dev.s3.amazonaws.com/#{upload.prof_email}/#{upload.classroom_id}/#{upload.date_of_picture}.jpg" %>
+        <%= image_tag url, class: "card-img-top" %>
+        <div class="card-body">
+          <p class="card-text"><%= upload.date_of_picture %></p>
+        </div>
+      </div>
+      <br>
 
-    <div class="card">
+    <% end %>
+
+    <br>
+    <div class="card"  style="width: 40rem;">
   <div class="card-body">
     <h5 class="card-title">Add new lecture photo</h5>
     

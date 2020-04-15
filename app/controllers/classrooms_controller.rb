@@ -23,5 +23,6 @@ class ClassroomsController < ApplicationController
 		@classroom = Classroom.find(params[:id])
 		flash[:classroom_id] = @classroom.id
 		@students = Student.where(classroom_id: @classroom.id)
+		@attendance_uploads = AttendanceUpload.where(prof_id: current_user.id)
 	end
 end
