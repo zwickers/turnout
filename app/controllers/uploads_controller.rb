@@ -8,16 +8,16 @@ class UploadsController < ApplicationController
 
   def create
 
-	s3 = Aws::S3::Resource.new(
-	credentials: Aws::Credentials.new(ENV['AWS_ACCESS_KEY_ID'], ENV['AWS_SECRET_ACCESS_KEY']),  
-	region: 'us-east-1') 
+  	s3 = Aws::S3::Resource.new(
+  	credentials: Aws::Credentials.new(ENV['AWS_ACCESS_KEY_ID'], ENV['AWS_SECRET_ACCESS_KEY']),  
+  	region: 'us-east-1') 
 
-	# the file in the S3 will simply be named the student's university id
-	filename = params[:uni_id] + ".jpg"
+  	# the file in the S3 will simply be named the student's university id
+  	filename = params[:uni_id] + ".jpg"
 
-	obj = s3.bucket('individual-student-faces').object(filename)
+  	obj = s3.bucket('individual-student-faces').object(filename)
 
-	obj.upload_file(params[:file].tempfile ,acl:'public-read')
+  	obj.upload_file(params[:file].tempfile ,acl:'public-read')
 
     # Check if it was successfully uploaded to S3
     if obj.public_url
