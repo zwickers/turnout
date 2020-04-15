@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   resources :users
   resources :classrooms
   resources :students
+  post 'attendance_uploads/:classroom_id' => 'attendance_uploads#create'
+  resources :attendance_uploads
 
   get "uploads/new/:student_id" => "uploads#new"
   resources :uploads

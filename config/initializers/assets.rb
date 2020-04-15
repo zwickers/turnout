@@ -18,3 +18,7 @@ Rails.application.config.assets.precompile += %w( jquery-easing/jquery.easing.mi
 Rails.application.config.assets.precompile += %w( device-mockups/device-mockups.min.css )
 Rails.application.config.assets.precompile += %w( homepage.css )
 Rails.application.config.assets.precompile += %w( homepage.js )
+Rails.application.config.assets.precompile += %w( picker/picker.js )
+Rails.application.config.assets.precompile += %w( picker/picker.date.js )
+Rails.application.config.assets.precompile += %w( default.css )
+Rails.application.config.assets.precompile += %w( default.date.css )

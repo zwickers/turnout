@@ -1,6 +1,7 @@
 <div class="container">
 <br>
-<h3> <%= @classroom.name%> </h3>
+<h3 id="class-title"> <%= @classroom.name%> Dashboard</h3> <%= link_to "Back to classrooms", "/classrooms" %>
+<br>
 <br>
 
 <table class="table table-hover">
@@ -29,9 +30,53 @@
     <% end %>
   </tbody>
 </table>
-
+<%= button_to "Add attendance photo", "/attendance_uploads/new", method: "get"%>
 <%= button_to "Add student", "/students/new", method: "get" %>
 <br>
-<%= button_to "Back to classrooms", "/classrooms", method: "get" %>
+
+<div class="alert alert-success" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <h4 class="alert-heading">Well done!</h4>
+  <p>Aww yeah, you successfully uploaded your lecture snapshot. Expect to receive an email in the next 24 hours, indicating that attendance grades have been entered into the Google Spreadsheet associated with this classroom.</p>
+  <hr>
+  <p class="mb-0">Reminder: If there is an attendance dispute, you can go back and inspect the image you uploaded and manually check if the student was in lecture.</p>
+</div>
+
+<div class="card" style="width: 40rem;">
+  <div class="card-body">
+    <h5 class="card-title">Attendance</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Simply upload a photo of your lecture's audience, and let us do the grading.
+    </h6>
+
+
+    content content <br>
+     content content <br>
+      content content <br>
+       content content <br><br>
+
+    <div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Add new lecture photo</h5>
+    
+
+
+<%= form_tag "/attendance_uploads/#{@classroom.id}", enctype: 'multipart/form-data' do %>
+<%= label_tag(:date, "Date:") %>
+<%= text_field_tag :date, "", class: "datepicker" %> <br>
+<%= label_tag(:file, "Image:") %>
+  <%= file_field_tag :file  %>
+  <br><br>
+  <%= submit_tag 'GRADE MY CLASS!' %>
+<% end %>
+
+  </div>
+</div>
+  </div>
+</div>
+</div>
+
+<br>
 
 </div>

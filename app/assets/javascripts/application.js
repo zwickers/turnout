@@ -15,3 +15,9 @@
 //= require jquery
 //= require jquery_ujs 
 
+
+$( document ).ready(function() {
+    $('.datepicker').pickadate({
+    	format: 'mm-dd-yyyy'
+    });
+});
