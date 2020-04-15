@@ -1,9 +1,12 @@
+<div class="classroom">
 <div class="container">
 <br>
 <h3 id="class-title"> <%= @classroom.name%> Dashboard</h3> <%= link_to "Back to classrooms", "/classrooms" %>
 <br>
 <br>
 
+<div class="card">
+  <div class="card-body">
 <table class="table table-hover">
   <thead>
     <tr>
@@ -36,8 +39,12 @@
   </tbody>
 </table>
 <%= button_to "Add attendance photo", "/attendance_uploads/new", method: "get"%>
+<br>
 <%= button_to "Add student", "/students/new", method: "get" %>
 <br>
+
+</div>
+</div>
 
 <% if flash[:attendance_image_success] %>
 
@@ -65,9 +72,11 @@
 
 <% end %>
 
+<br>
+
 <div class="card">
   <div class="card-body">
-    <h5 class="card-title">Attendance</h5>
+    <h3 class="card-title">Attendance</h3>
     <h6 class="card-subtitle mb-2 text-muted">Simply upload a photo of your lecture's audience, and let us do the grading.
     </h6>
 
@@ -108,4 +117,5 @@
 
 <br>
 
+</div>
 </div>

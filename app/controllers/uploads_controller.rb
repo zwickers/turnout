@@ -15,7 +15,7 @@ class UploadsController < ApplicationController
   	# the file in the S3 will simply be named the student's university id
   	filename = params[:uni_id] + ".jpg"
 
-  	obj = s3.bucket('individual-student-faces').object(filename)
+  	obj = s3.bucket('turnout-test-bucket').object(filename)
 
   	obj.upload_file(params[:file].tempfile ,acl:'public-read')
 
