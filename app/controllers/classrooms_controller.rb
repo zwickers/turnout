@@ -25,4 +25,9 @@ class ClassroomsController < ApplicationController
 		@students = Student.where(classroom_id: @classroom.id)
 		@attendance_uploads = AttendanceUpload.where(prof_id: current_user.id, classroom_id: @classroom.id)
 	end
+
+	def destroy
+		Classroom.delete(params[:id])
+		redirect_to "/classrooms"
+	end
 end
