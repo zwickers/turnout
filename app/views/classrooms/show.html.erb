@@ -78,7 +78,7 @@
     <h3 class="card-title">Attendance</h3>
     <h6 class="card-subtitle mb-2 text-muted">Simply upload a photo of your lecture's audience, and let us do the grading.
     </h6>
-
+<div class="card-columns">
     <% @attendance_uploads.each do |upload| %>
       
       <div class="card" style="width: 18rem;">
@@ -89,9 +89,12 @@
           <p class="card-text"><%= upload.date_of_picture %></p>
         </div>
       </div>
+
+
       <br>
 
     <% end %>
+    </div>
     <br>
     <div class="card"  style="width: 40rem;">
   <div class="card-body">
