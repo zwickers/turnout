@@ -1,4 +1,5 @@
-  <br>
+
+<div class="container">
 <div id="nav">
 
     <% if current_user %>
@@ -8,14 +9,38 @@
       <%= link_to "login", :login %>
     <% end %>
   </div>
-  <div>
-    <p id="notice"><%= flash[:notice] %></p>
-    <p id="alert"><%= flash[:alert] %></p>
-  </div>
-  <br>
-
-<%= link_to "Create new class", "/classrooms/new" %>
 <br>
-<% @classrooms.each do |classroom| %>
-<%= link_to classroom.name, "classrooms/#{classroom.id}" %> <br>
+
+
+
+<div class="card">
+  <div class="card-header">
+    <strong>My Classrooms</strong>
+  </div>
+  <div class="card-body">
+    <ul class="list-group list-group-flush">
+      <% @classrooms.each do |classroom| %>
+      <li class="list-group-item"><%= link_to classroom.name, "classrooms/#{classroom.id}" %> </li>
+      <% end %>
+      <li class="list-group-item">
+        <%= link_to "/classrooms/new", :action => 'go' do %>
+
+     <svg class="bi bi-plus" width="3em" height="3em" viewBox="0 0 16 16" fill="#0275d8" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M8 3.5a.5.5 0 01.5.5v4a.5.5 0 01-.5.5H4a.5.5 0 010-1h3.5V4a.5.5 0 01.5-.5z" clip-rule="evenodd"/>
+  <path fill-rule="evenodd" d="M7.5 8a.5.5 0 01.5-.5h4a.5.5 0 010 1H8.5V12a.5.5 0 01-1 0V8z" clip-rule="evenodd"/>
+</svg>
 <% end %>
+</li>
+    </ul>
+
+
+
+ 
+  </div>
+
+</div>
+
+
+
+
+</div>
