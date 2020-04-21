@@ -11,7 +11,7 @@ def lambda_handler(event, context):
     s3_object_key = event["Records"][0]["s3"]["object"]["key"]
     s3_resource = boto3.resource('s3')
     date = s3_object_key.split("/")[2][0:-4]
-    student_ids_in_lecture = []
+    student_ids_in_lecture = set()
     
     # download the file to the local file system for cropping
     my_bucket = s3_resource.Bucket(LECTURE_BUCKET)
@@ -43,7 +43,7 @@ def lambda_handler(event, context):
 
     sqs_client = boto3.client('sqs', region_name="us-east-1")
     
-    message_body = json.dumps({"students": student_ids_in_lecture, "date": date, "spreadsheet": "test-attendance"})
+    message_body = json.dumps({"students": list(student_ids_in_lecture), "date": date, "spreadsheet": "test-attendance"})
     
     enqueue_response = sqs_client.send_message(
         QueueUrl=QUEUE_URL,
@@ -66,7 +66,7 @@ def search_faces_by_local_image(image_file, collection_id, students, threshold=8
     )
 
     if response['FaceMatches'][0]["Face"].get("ExternalImageId"):
-        students.append(response['FaceMatches'][0]["Face"].get("ExternalImageId"))
+        students.add(response['FaceMatches'][0]["Face"].get("ExternalImageId"))
     else:
         print("FACE IDENTIFIED, BUT WAS NOT INDEXED IN REKOGNITION COLLECTION")
 
