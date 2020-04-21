@@ -46,6 +46,9 @@ GEM
     aws-sdk-kms (1.30.0)
       aws-sdk-core (~> 3, >= 3.71.0)
       aws-sigv4 (~> 1.1)
+    aws-sdk-lambda (1.39.0)
+      aws-sdk-core (~> 3, >= 3.71.0)
+      aws-sigv4 (~> 1.1)
     aws-sdk-s3 (1.61.2)
       aws-sdk-core (~> 3, >= 3.83.0)
       aws-sdk-kms (~> 1)
@@ -183,10 +186,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  aws-sdk-lambda
   aws-sdk-s3
   coffee-rails (~> 4.1.0)
   jbuilder (~> 2.0)
   jquery-rails
+  json
   rails (= 4.2.10)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
