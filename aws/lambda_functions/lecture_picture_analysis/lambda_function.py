@@ -1,9 +1,9 @@
-import json, boto3
+import json, boto3, os
 from PIL import Image
 
-LECTURE_BUCKET = os.environ("LECTURE_BUCKET")
-COLLECTION = os.environ("COLLECTION")
-QUEUE_URL= os.environ("QUEUE_URL")
+LECTURE_BUCKET = os.environ["LECTURE_BUCKET"]
+COLLECTION = os.environ["COLLECTION"]
+QUEUE_URL= os.environ["QUEUE_URL"]
 
 def lambda_handler(event, context):
     # prof_email/classroom_id/date.jpg
