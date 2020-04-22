@@ -42,8 +42,18 @@ def lambda_handler(event, context):
             search_faces_by_local_image(image.read(), COLLECTION, student_ids_in_lecture)
 
     sqs_client = boto3.client('sqs', region_name="us-east-1")
-    
-    message_body = json.dumps({"students": list(student_ids_in_lecture), "date": date, "spreadsheet": "test-attendance"})
+
+    prof_email = s3_object_key.split("/")[0]
+    classroom_id = s3_object_key.split("/")[1]
+
+    pc = prof_email + ":" + classroom_id
+
+    # fetch url from dynamodb table
+    dynamodb = boto3.client('dynamodb')
+    item = dynamodb.get_item(TableName='google-spreadsheets', Key={'prof_email:classroom_id':{'S':pc}})
+    url = item["Item"]["url"]["S"]
+
+    message_body = json.dumps({"students": list(student_ids_in_lecture), "date": date, "spreadsheet_url": url})
     
     enqueue_response = sqs_client.send_message(
         QueueUrl=QUEUE_URL,
