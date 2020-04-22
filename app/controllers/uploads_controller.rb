@@ -24,6 +24,17 @@ class UploadsController < ApplicationController
       student = Student.find_by(id: flash[:student_id])
       student.update(did_upload_photo: true)
       flash[:student_id_to_change] = flash[:student_id]
+
+      # add row to google spreadsheet with this studentid, now that we have a pic to use
+      client = Aws::Lambda::Client.new(region: 'us-east-1')
+      req_payload = {:url => flash[:url], :uni_id => student.university_id}
+      payload = JSON.generate(req_payload)
+      client.invoke({
+                     function_name: 'add_studentid_to_spreadsheet',
+                     invocation_type: 'RequestResponse',
+                     log_type: 'None',
+                     payload: payload
+                   })
       redirect_to "/classrooms/#{flash[:classroom_id]}", success: 'File successfully uploaded'
     else
       flash.now[:image_upload_error] = 'There was an error uploading the image. Please try again later.'
