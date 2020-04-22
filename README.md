@@ -46,6 +46,6 @@ rails server
 
 SQLite3 is used for our development, testing, and prod databases in the Ruby on Rails webapp. 
 
-DynamoDB was also used as a "quick and dirty" datastore so that various Lambda functions could easily fetch the proper URL of Google Spreadsheet they were to manipulate.
+DynamoDB was also used as a "quick and dirty" datastore so that various Lambda functions could easily fetch the proper URL of the Google Spreadsheet they were to manipulate.
 
-## TODO: Add Architecture diagram
+## //TODO: Add Architecture diagram
