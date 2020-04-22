@@ -30,7 +30,18 @@ class ClassroomsController < ApplicationController
 		if resp_payload["statusCode"] == 200
 		  body = JSON.parse(resp_payload["body"])
 		  url = body["spreadsheet_url"]
-		  Classroom.create(name: class_name, prof_id: current_user.id, url: url)
+		  new_class = Classroom.create(name: class_name, prof_id: current_user.id, url: url)
+		  # now that we have an id for the classroom, let's map
+		  # it to the sheet url in a dynamodb table, so we can
+		  # fetch the url in other lambda functions
+		  req_payload = {:prof_email => current_user.email, classroom_id: new_class.id, url: url}
+		  payload = JSON.generate(req_payload)
+		  client.invoke({
+                         function_name: 'write_spreadsheet_url_to_db_table',
+                         invocation_type: 'RequestResponse',
+                         log_type: 'None',
+                         payload: payload
+                       })
 		  redirect_to "/classrooms"
 		end
 	end
@@ -41,6 +52,7 @@ class ClassroomsController < ApplicationController
 		flash[:classroom_id] = @classroom.id
 		@students = Student.where(classroom_id: @classroom.id)
 		@attendance_uploads = AttendanceUpload.where(prof_id: current_user.id, classroom_id: @classroom.id)
+		flash[:url] = @classroom.url
 	end
 
 	def destroy
