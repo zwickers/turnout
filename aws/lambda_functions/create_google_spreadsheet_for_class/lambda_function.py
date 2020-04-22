@@ -15,6 +15,10 @@ def lambda_handler(event, context):
 
     sheet.share(prof_email, perm_type='user', role='reader')
 
+    spreadsheet = sheet.sheet1
+
+    spreadsheet.update_cell(1, 1, "Student ID")
+
     return {
         'statusCode': 200,
         'body': json.dumps({"spreadsheet_url": sheet.url})
