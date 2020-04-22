@@ -5,6 +5,8 @@
 <br>
 <br>
 
+
+
 <div class="card">
   <div class="card-body">
     <h3 class="card-title">Students:</h3>
@@ -46,7 +48,21 @@
 </div>
 </div>
 
+<br>
+
+<div class="card delete-class-card">
+  <h4 class="card-title classroom-delete-title">Google Sheet for this classroom</h4>
+  <div class="card-body mx-auto">
+    
+    
+    <%= link_to @classroom.url, @classroom.url %>
+
+  </div>
+</div>
+
 <% if flash[:attendance_image_success] %>
+
+  <br>
 
   <div class="alert alert-success" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
