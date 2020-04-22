@@ -9,6 +9,7 @@ def lambda_handler(event, context):
     # prof_email/classroom_id/date.jpg
     print("Logging the event: " + str(event))
     s3_object_key = event["Records"][0]["s3"]["object"]["key"]
+    s3_object_key = s3_object_key.replace("%40","@")
     s3_resource = boto3.resource('s3')
     date = s3_object_key.split("/")[2][0:-4]
     student_ids_in_lecture = set()
