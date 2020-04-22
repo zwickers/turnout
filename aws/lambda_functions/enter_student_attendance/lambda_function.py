@@ -12,9 +12,13 @@ def lambda_handler(event, context):
 
     if 'Messages' in messages:  # when the queue is exhausted, the response dict contains no 'Messages' key
         message_body = json.loads(messages['Messages'][0]['Body'])
-        sheet = client.open(message_body["spreadsheet"]).sheet1
+        sheet = client.open_by_url(message_body["spreadsheet_url"]).sheet1
         ids = message_body["students"]
         date = message_body["date"]
+
+        col = len(sheet.row_values(1)) + 1
+        # add a column header for the date
+        sheet.update_cell(1, col, date)
 
         for id in ids:
             row_num = sheet.row_values(1).index(date) + 1
