@@ -26,7 +26,7 @@ def lambda_handler(event, context):
             sheet.update_cell(col_num, row_num, '\U00002705')
         print("Spreadsheet updated")
         # next, we delete the message from the queue so no one else will process it again
-        # sqs_client.delete_message(QueueUrl=QUEUE_URL,ReceiptHandle=message['ReceiptHandle'])
+        sqs_client.delete_message(QueueUrl=QUEUE_URL, ReceiptHandle=messages["Messages"][0]["ReceiptHandle"])
     else:
         print("THERE ARE NO MESSAGES, HOMIE")
 
