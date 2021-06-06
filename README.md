@@ -49,4 +49,4 @@ SQLite3 is used for our development, testing, and prod databases in the Ruby on 
 DynamoDB was also used as a "quick and dirty" datastore so that various Lambda functions could easily fetch the proper URL of the Google Spreadsheet they were to manipulate.
 
 ## Architecture diagram
-![Image of architecture](https://imgur.com/a/jb3Exbo)
+![Image of architecture](https://i.imgur.com/4j41wTI.png)
